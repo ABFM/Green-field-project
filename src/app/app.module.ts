@@ -18,6 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DataService } from './services/dataService/data.service';
 import { RoutingModule } from './modules/routing/routing.module';
 import { MaterialModule } from './modules/material/material.module';
+import { UserAuthService } from './services/userAuth/user-auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -40,9 +42,13 @@ import { MaterialModule } from './modules/material/material.module';
   imports: [
     BrowserModule,
     RoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [DataService],
+  providers: [
+    DataService,
+    UserAuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
